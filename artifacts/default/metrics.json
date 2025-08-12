@@ -1,0 +1,17 @@
+{
+  "market": "default",
+  "n_rows_train": 8000,
+  "n_rows_test": 2000,
+  "n_features": 3,
+  "cat_cols": [
+    "country"
+  ],
+  "num_cols": [
+    "count_total",
+    "cust_id"
+  ],
+  "target": "churn",
+  "test_positive_rate": 0.501,
+  "accuracy": 0.5175,
+  "auc": 0.5203185812743251
+}

@@ -1,0 +1,49 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*.class
+
+# Virtual environment
+.venv/
+env/
+venv/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# VSCode and PyCharm configs
+.vscode/
+.idea/
+
+# Python packaging
+build/
+dist/
+*.egg-info/
+
+# AWS credentials
+.aws/
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform.tfvars
+*.pem
+
+# Environment files and secrets
+.env
+*.env
+secrets.*
+credentials.*
+
+# Docker
+*.log
+*.pid
+docker-compose.override.yml
+
+# Artifacts and models (keep one as an example)
+artifacts/*
+!artifacts/scored_default.csv
+!artifacts/default/
+!artifacts/default/**
+
+# MacOS system files
+.DS_Store

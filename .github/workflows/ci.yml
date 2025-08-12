@@ -1,0 +1,25 @@
+name: CI Pipeline
+
+on:
+  push:
+    branches:
+      - '**'
+
+jobs:
+  print_branch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Branch Name
+        run: echo "Branch name:${{ github.ref_name }}"
+
+  secret_detection:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Run secret detection (Gitleaks example)
+        uses: gitleaks/gitleaks-action@v2
+        with:
+          config-path: .gitleaks.toml
+          args: detect --no-git -v

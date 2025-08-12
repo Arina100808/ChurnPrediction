@@ -1,0 +1,8 @@
+features:
+  - count_total
+  - cust_id
+threshold: 0.5
+model_params:
+  n_estimators: 500
+  max_depth: 6
+  learning_rate: 0.05

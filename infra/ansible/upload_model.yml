@@ -1,0 +1,20 @@
+---
+- name: Upload model to S3 bucket
+  hosts: localhost
+  connection: local
+  gather_facts: false
+
+  tasks:
+    - name: Upload model artifact to S3
+      amazon.aws.aws_s3:
+        bucket: default-churn-model-artifacts
+        object: model_default.joblib
+        src: ../../artifacts/default/model_default.joblib
+        mode: put
+        region: us-east-1
+        overwrite: always
+      register: upload_result
+
+    - name: Print upload result
+      debug:
+        var: upload_result
