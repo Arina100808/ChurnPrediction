@@ -81,6 +81,7 @@ All steps assume that the code has been cloned locally and required tools (e.g.,
 - [Docker](https://www.docker.com/get-started/) installed and running locally
 - [Terraform](https://developer.hashicorp.com/terraform/downloads)
 - [Ansible](https://docs.ansible.com/) installed
+- - Git (for version control)
 - An [AWS](https://console.aws.amazon.com/iam) account
 
 ---
