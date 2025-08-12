@@ -42,7 +42,7 @@ brenntag-churn/
 │   │   └── markets/           # YAML files with per-market parameters
 │   └── data/
 │       └── data.csv           # Input dataset
-├── .gitlab-ci.yml             # CI/CD pipeline config (GitLab)
+├── .github/workflows/ci.yml   # CI/CD pipeline config (GitHub)
 ├── requirements.txt           # Python dependencies
 └── README.md                  # Project documentation
 ```
@@ -56,7 +56,7 @@ brenntag-churn/
 - A Dockerfile is provided to **containerize** the application for consistent execution across environments.
 - Infrastructure for storing model artifacts is provisioned using **Terraform**, specifically by creating an S3 bucket on **AWS**.
 - **Ansible** is used to automate the process of uploading trained model artifacts to the configured S3 bucket.
-- A **CI/CD** pipeline is defined (GitLab) to run basic jobs on each commit, such as printing the current branch name and detecting secrets in the repository.
+- A **CI/CD** pipeline is defined (GitHub) to run basic jobs on each commit, such as printing the current branch name and detecting secrets in the repository.
 - The solution supports YAML-based configuration for market-specific model parameters such as number of estimators, depth, and learning rate.
 
 ---
@@ -69,7 +69,7 @@ This section provides step-by-step instructions to:
 - Run the solution using Docker
 - Provision infrastructure on AWS using Terraform
 - Upload model artifacts to S3 using Ansible
-- Set up and verify the CI/CD pipeline with GitLab
+- Set up and verify the CI/CD pipeline with GitHub
 
 All steps assume that the code has been cloned locally and required tools (e.g., Docker, Terraform, Ansible) are installed.
 
@@ -81,16 +81,14 @@ All steps assume that the code has been cloned locally and required tools (e.g.,
 - [Docker](https://www.docker.com/get-started/) installed and running locally
 - [Terraform](https://developer.hashicorp.com/terraform/downloads)
 - [Ansible](https://docs.ansible.com/) installed
-- Git (for version control)
-- A GitHub or GitLab account
-- An [AWS](https://console.aws.amazon.com/iam) account (free tier is sufficient)
+- An [AWS](https://console.aws.amazon.com/iam) account
 
 ---
 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://gitlab.com/your-username/churn-prediction.git
+git clone https://github.com/Arina100808/churn-prediction.git
 cd churn-prediction
 ```
 
@@ -198,17 +196,17 @@ This uploads the trained model (e.g., `model_AB.joblib`) to the configured S3 bu
 
 ---
 
-### 5. CI/CD Pipeline with GitLab
+### 5. CI/CD Pipeline with GitHub
 
-A `.gitlab-ci.yml` file is included to trigger a pipeline on each commit. It contains:
+A `.github/workflows/ci.yml` file is included to trigger a pipeline on each commit. It contains:
 
 - A job to print the branch name.
-- GitLab's built-in secret detection template.
+- Secret detection template.
 
 To verify the pipeline:
 
-1. Go to a GitLab project.
-2. Click on **CI/CD > Pipelines** to see the jobs.
+1. Go to a GitHub project.
+2. Click on **Actions > Commit name** to see the jobs.
 3. Click into each job to see logs and results.
 
 ---
